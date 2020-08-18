@@ -121,7 +121,7 @@
 		width: 250rpx;
 	}
 	.box-img{
-		margin-top: 100rpx;
+		margin-top: 50px;
 		width: 96rpx;
 		height: 96rpx;
 	}
