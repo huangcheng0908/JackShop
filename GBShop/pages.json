@@ -1,0 +1,63 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "书店",
+				"navigationBarBackgroundColor":"#FFFFFF"
+			}
+		}
+	    ,{
+            "path" : "pages/classifiy/classifiy",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/cart/cart",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" : {}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "书城",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar":{
+		"color":"#999999",
+		"selectedColor":"#527E69",
+		"backgroundColor":"#FFFFFF",
+		"fontSize":"9px",
+		"borderStyle":"black",
+		"list":[
+			{
+				"pagePath":"pages/index/index",
+				"iconPath":"static/image/sc_tab_home_momal@3x.png",
+				"selectedIconPath":"static/image/sc_tab_home_selected@3x.png",
+				"text":"首页"
+			},
+			{
+				"pagePath":"pages/classifiy/classifiy",
+				"iconPath":"static/image/sc_tab_ic_class%20_momal@3x.png",
+				"selectedIconPath":"static/image/sc_tab_ic_class%20_selected@3x.png",
+				"text":"分类"
+			},
+			{
+				"pagePath":"pages/cart/cart",
+				"iconPath":"static/image/sc_tab_ic_shoping%20cart_momal@3x.png",
+				"selectedIconPath":"static/image/sc_tab_ic_shoping%20cart_selected@3x.png",
+				"text":"购物车"
+			},
+			{
+				"pagePath":"pages/mine/mine",
+				"iconPath":"static/image/sc_tab_ic_my_momal@3x.png",
+				"selectedIconPath":"static/image/sc_tab_ic_my_selected@3x.png",
+				"text":"我的"
+			}
+			
+		]
+	}
+}
