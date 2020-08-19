@@ -42,6 +42,7 @@
 		width: 100%;
 		color: #333333;
 		font-size: 14px;
+		height: 78rpx;
 		white-space: pre-line; /* view的文字自动换行 不会保留空白和tabs） */
 		// white-space:pre-wrap; /* （会保留空白和tabs） */
 		overflow: hidden;  /* 超出一行文字自动隐藏 */

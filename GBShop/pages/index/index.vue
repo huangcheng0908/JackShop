@@ -79,7 +79,7 @@
 		<view>
 			<boxs :reciveboxInfo="boxInfo2" style="background-color: #F8F8F8;"> </boxs>
 		</view>
-		<bookLikeJs :receiveLikeInfos="booklikeinfos"></bookLikeJs>
+		<bookLikeJs :receiveLikeInfos="booklikeinfos" @onclickItem="onclickItem"></bookLikeJs>
 		<view style="height: 40rpx;background-color: #F8F8F8;"></view>
 
 	</view>
@@ -248,6 +248,9 @@
 			},
 			onchange: function(e) {
 				console.log(e)
+			},
+			onclickItem:function(res){
+				console.log('uuuwuwuwuwu' + res)
 			}
 		},
 		components: {

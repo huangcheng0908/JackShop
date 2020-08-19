@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view style="background-color: #F8F8F8; display: flex;flex-direction: row;flex-wrap: wrap;">
+		<view class="like">
 			<block v-for="(item,index) in receiveLikeInfos" :key="index">
-				<view class="box-like">
+				<view class="box-like" @click="onclickItem(index)">
 					<view class="like-img">
 						<image class="like-item-img" src="../static/image/banner1@3x.png"></image>
 					</view>
@@ -15,11 +15,22 @@
 
 <script>
 	export default{
-		props:["receiveLikeInfos"]
+		props:["receiveLikeInfos"],
+		methods:{
+			onclickItem:function(res){
+				this.$emit("onclickItem",res)
+			}
+		}
 	}
 </script>
 
 <style>
+	.like{
+		background-color: #F8F8F8; 
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
 	.box-like{
 		display: flex;
 		flex-direction: column;
@@ -34,11 +45,11 @@
 		margin-top: 40rpx;
 		width: 168rpx;
 		height: 240rpx;
-		border-radius: 4px;
 	}
 	.like-item-img{
 		width: 100%;
 		height: 100%;
+		border-radius: 4px;
 	}
 	.like-title{
 		margin-top: 32rpx;
