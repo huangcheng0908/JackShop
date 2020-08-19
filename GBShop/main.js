@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App'
+import api from 'network/api.js'
+import netWork from 'network/netWork.js'
 
 Vue.config.productionTip = false
 
