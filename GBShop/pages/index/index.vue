@@ -25,12 +25,63 @@
 				<text class="box-title">{{item.text}}</text>
 			</view>
 		</view>
+		
+		<boxs :reciveboxInfo="boxInfo"> </boxs>
+		
+		<view class="second">
+			<uni-countdown :showColon="false" color="#FFFFFF" background-color="#527E69" border-color="#527E69" :show-day="false" :hour="2" :minute="30" :second="0"></uni-countdown>
+		</view>
+		
+		<view>
+			<scroll-view scroll-x="true" class="box-list">
+				<view class="bookcol">
+					<view class="bookcol-img">
+						<image class="son-img" src="../../static/image/banner1@3x.png"></image>
+					</view>
+					<view class="book-title">追风筝的人...追风筝的人...</view>
+					<view class="book-price">￥12</view>
+					<view class="book-oprice">￥128</view>
+				</view>
+				
+				<view class="bookcol">
+					<view class="bookcol-img">
+						<image class="son-img" src="../../static/image/banner1@3x.png"></image>
+					</view>
+					<view class="book-title">追风筝的人...追风筝的人...</view>
+					<view class="book-price">￥12</view>
+					<view class="book-oprice">￥128</view>
+				</view>
+				
+				<view class="bookcol">
+					<view class="bookcol-img">
+						<image class="son-img" src="../../static/image/banner1@3x.png"></image>
+					</view>
+					<view class="book-title">追风筝的人...追风筝的人...</view>
+					<view class="book-price">￥12</view>
+					<view class="book-oprice">￥128</view>
+				</view>
+				
+				<view class="bookcol">
+					<view class="bookcol-img">
+						<image class="son-img" src="../../static/image/banner1@3x.png"></image>
+					</view>
+					<view class="book-title">追风筝的人...追风筝的人...地对地导弹地对地导弹多大的</view>
+					<view class="book-price">￥12</view>
+					<view class="book-oprice">￥128</view>
+				</view>
+				
+			</scroll-view>
+		</view>
+		
+		
 	</view>
 	
 </template>
 
 <script>
 	import searchJs from "../../component/searchJs.vue"
+	import boxs from "../../component/boxs.vue"
+	import uniCountdown from '@/components/uni-countdown/uni-countdown.vue'
 	export default {
 		data() {
 			return {
@@ -53,7 +104,12 @@
 						text:"秒杀区",
 						URL:"../../static/image/sc_ic_msq@3x.png"
 					}
-				]
+				],
+				boxInfo:[
+					{
+					imgurl:"../../static/image/sc_ic_clock@3x.png",
+					title:"每日秒杀"
+				}]
 			}
 		},
 		onLoad() {
@@ -65,38 +121,12 @@
 			}
 		},
 		components:{
-			searchJs
+			searchJs,boxs,uniCountdown
 		}
 	}
 </script>
 
-<style>
-	/* 搜索 */
-	/* .search{
-		background-color: rgba(82,126,105,0.11);
-		height: 72rpx;
-		margin-top: 14rpx;
-		margin-left: 30rpx;
-		margin-right: 30rpx;
-		border-radius: 36rpx;
-		display: flex;
-		flex-direction: row;
-	}
-	.img{
-		width: 32rpx;
-		height: 32rpx;
-		margin-left: 30rpx;
-		margin-top: 20rpx;
-	}
-	.input{
-		margin-left: 20rpx;
-		margin-right: 30rpx;
-		height: 72rpx;
-		width: 100%;
-		color: #AAAAAA;
-		font-size: 16px;
-	} */
-	
+<style lang="scss">
 	/* banner */
 	.swip{
 		margin-top: 14rpx;
@@ -131,4 +161,51 @@
 		font-size: 28rpx;
 	}
 	
+	.second{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	/* 书列表 */
+	.box-list{
+		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	
+	.bookcol{
+		display: inline-block;
+		margin-left: 30rpx;
+		margin-top: 40rpx;
+		width: 168rpx;
+	}
+	.bookcol-img{
+		width: 168rpx;
+		height: 240rpx;
+	}
+	.son-img{
+		width: 100%;
+		height: 100%;
+	}
+	.book-title{
+		margin-top: 15rpx;
+		width: 100%;
+		height: 80rpx;
+		color: #333333;
+		font-size: 14px;
+		white-space: pre-line; /* view的文字自动换行 不会保留空白和tabs） */
+		// white-space:pre-wrap; /* （会保留空白和tabs） */
+		overflow: hidden;  /* 超出一行文字自动隐藏 */
+		text-overflow: ellipsis; /* 超出一行文字自动隐藏 */
+	}
+	.book-price{
+		color: #FF6E06;
+		font-size: 12px;
+	}
+	.book-oprice{
+		color: #999999;
+		font-size: 14px;
+		text-decoration: line-through;
+	}
 </style>
