@@ -1,45 +1,47 @@
-export default{
-	HttpRequestGET:function(reqUrl,params,successCallBack,failCallBack){
-		let paramsObj = {};
-		for (var key in params) {
-			if (!(params[key] === null || params[key] === '')) {
-				paramsObj[key] = params[key];
-			}
+import api from 'network/api.js'
+
+module.exports = (params) =>{
+	let url = api.BASE_URI + params.url;
+	let method = params.method;
+	let header = params.header || {};
+	let data = params.data || {};
+	if (method) {
+		method = method.toUpperCase();
+		if (method == "POST") {
+			header = {"content-type":"application/x-www-form-urllencoded"}
 		}
-		uni.request({
-			url:api.BASE_URI + reqUrl,
-			data:paramsObj,
-			header:"",
-			method:"GET",
-			success: (res) => {
-				console.log(res.data);
-				successCallBack(res.data);
-			},
-			fail: (res) => {
-				console.log(res);
-			}
-		})
-	},
-	
-	HttpRequestPOST:function(reqUrl,params,successCallBack,failCallBack){
-		let paramsObj = {};
-		for (var key in params) {
-			if (!(params[key] === null || params[key] === '')) {
-				paramsObj[key] = params[key];
-			}
-		}
-		uni.request({
-			url:api.BASE_URI + reqUrl,
-			data:paramsObj,
-			header:"",
-			method:"POST",
-			success: (res) => {
-				console.log(res);
-				successCallBack(res.data);
-			},
-			fail: (res) => {
-				console.log(res);
-			}
+	}
+	if (!params.hideLoading) {
+		uni.showLoading({
+			title:"加载中"
 		})
 	}
+	uni.request({
+		url:url,
+		method:method || "GET",
+		header:header,
+		data:data,
+		dataType:"json",
+		success: (res) => {
+			if (res.statusCode && res.statusCode != 200) {
+				uni.showModal({
+					content:res.errMsg
+				})
+				return;
+			}
+			typeof params.success == "function" && params.success(res.data);
+		},
+		fail: (err) => {
+			uni.showModal({
+				content:err.errMsg
+			})
+			typeof params.fail == "function" && params.fail(err.data);
+		},
+		complete: (e) => {
+			console.log(e);
+			uni.hideLoading()
+			typeof params.complete == "function" && params.complete(e.data);
+			return;
+		}
+	})
 }

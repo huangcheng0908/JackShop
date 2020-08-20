@@ -5,6 +5,8 @@ import netWork from 'network/netWork.js'
 
 Vue.config.productionTip = false
 
+Vue.prototype.api = api
+Vue.prototype.netWork = netWork
 App.mpType = 'app'
 
 const app = new Vue({

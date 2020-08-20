@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "书店",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "usingComponents": {
+    "uni-countdown": "/components/uni-countdown/uni-countdown",
+    "uni-grid": "/components/uni-grid/uni-grid",
+    "uni-grid-item": "/components/uni-grid-item/uni-grid-item",
+    "search-js": "/component/searchJs",
+    "boxs": "/component/boxs",
+    "book-list-js": "/component/bookListJs",
+    "book-like-js": "/component/bookLikeJs"
+  }
+}

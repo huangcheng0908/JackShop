@@ -1,0 +1,24 @@
+
+.box{
+	line-height: 100rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center; /* 水平居中 */
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center; /* 垂直居中 */
+}
+.lineImg{
+	margin-right: 10rpx;
+	width: 40rpx;
+	height: 40rpx;
+}
+.line-title{
+	font-size: 40rpx;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: #527e69;
+}
+
